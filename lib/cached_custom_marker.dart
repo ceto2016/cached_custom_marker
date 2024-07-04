@@ -148,7 +148,7 @@ class CachedCustomMarker {
     );
     final bytes = await file.readAsBytes();
     final descriptor = BitmapDescriptor.bytes(bytes);
-    await delayFor15MilliSconds();
+    await _delayFor15MilliSconds();
     return descriptor;
   }
 
@@ -182,11 +182,11 @@ class CachedCustomMarker {
         imageSize: imageSize);
     final result = await file.readAsBytes();
     final descriptor = BitmapDescriptor.bytes(result);
-    await delayFor15MilliSconds();
+    await _delayFor15MilliSconds();
     return descriptor;
   }
 
-  Future<void> delayFor15MilliSconds() async {
+  Future<void> _delayFor15MilliSconds() async {
     await Future.delayed(const Duration(milliseconds: 15), () {});
   }
 
